@@ -35,3 +35,16 @@ npm install --save-dev eslint
 **parseOptions**: São algumas informações acerca da versão do JavaScript que estamos utilizando.
 **rules**: São algumas regras onde definimos como nosso código deve ser escrito, restrições e etc.
 **env**: Se refere ao ambiente pois as regras podem variar de ambiente para ambiente seja no browser ou no servidor.
+
+## 02 - Instalar a extensão do eslint no VSCODE:
+Com a extensão do eslint podemos ver os erros, concertar alguns através da própria extensão.
+
+Link Extensão: [Eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+
+Também podemos executar o comando abaixo, para que o eslint de forma automatica corrija alguns erros.
+
+```bash
+npx eslint . --fix
+```
+
+
