@@ -48,3 +48,30 @@ npx eslint . --fix
 ```
 
 
+## 03 - Usando as pré-configurações recomendas pelo ESLINT
+Ao adicionar uma configuração dentro do nosso ```.eslintrc```, temos a definição de algumas regras básicas de acordo com o eslint. Ou seja é um pacote pré-definido de algumas regras onde podemos adicionar a seguinte propriedade no JSON de configuração:
+```json
+{
+  "extends": ["eslint:recommended"]
+}
+```
+
+Nosso json do arquivo ```.eslintrc```, fica da seguinte forma:
+```json
+{
+  "parserOptions": {
+    "ecmaVersion": 2019,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "extends": ["eslint:recommended"],
+  "rules": {
+    "strict": ["error", "never"]
+  },
+  "env": {
+    "browser": true
+  }
+}
+```
