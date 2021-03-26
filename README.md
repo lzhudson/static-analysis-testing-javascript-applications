@@ -75,3 +75,25 @@ Nosso json do arquivo ```.eslintrc```, fica da seguinte forma:
   }
 }
 ```
+
+## 04 - Executando Eslint a partir de npm scripts
+Com os npm's scripts podemos executar diversos comandos, incluindo pacotes como o do eslint, para isso dentro do arquivo ```package.json``` criaremos o seguinte comando:
+```json
+{
+  "scripts": {
+    "lint": "eslint --ignore-path .gitignore",
+    "build": "babel src --out-dir dist"
+  }
+}
+```
+
+O comando **lint**, executará o eslint também ignorará todas as pastas e arquivos que estiverem dentro do arquivo ```.gitignore```. Para executar basta digitar o comando abaixo:
+```bash
+npm run lint
+```
+
+Opcionalmente também podemos criar o arquivo ```.eslintignore```, que nos possibilita adicionar pacotes e arquivos para não serem incluidos na analise do eslint.
+```
+node_modules
+dist
+```
