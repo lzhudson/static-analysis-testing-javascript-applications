@@ -97,3 +97,59 @@ Opcionalmente também podemos criar o arquivo ```.eslintignore```, que nos possi
 node_modules
 dist
 ```
+
+## 05 - Formatando código com Prettier
+O prettier é um formatador de código, responsavel por deixar nosso código mais bonito e legivel.
+
+01 - Primeiramente devemos instalar o prettier:
+```bash
+npm install --save-dev prettier
+```
+
+02 - Podemos rodar o comando abaixo em um arquivo, nesse caso se o código estiver mal formatado ele irá formatar o código e mostrará no console:
+```bash
+npx prettier src/example.js
+```
+Ex: Código mal formatado
+```js
+const name = "Freddy";
+typeof name === "string";
+
+if (   !("serviceWorker" in navigator)) {
+  // you have an old browser :-(
+}
+
+const greeting = "hello";
+console.log(`${greeting} world!`);
+[(1, 2, 3)].forEach((x) => console.log(x));
+```
+Ex: Código mostrado no console após rodar o comando
+```js
+const name = "Freddy";
+typeof name === "string";
+
+if (!("serviceWorker" in navigator)) {
+  // you have an old browser :-(
+}
+
+const greeting = "hello";
+console.log(`${greeting} world!`);
+[(1, 2, 3)].forEach((x) => console.log(x));
+```
+03 - Em seguida para que o prettier possa agir podemos rodar o comando abaixo, assim ele irá formatar e sobrescrever o código
+```bash
+npx prettier src/example.js --write
+```
+
+04 - Para agilizar a formatação dos arquivos, podemos criar um script que formatará todos os arquivos que terminem com ```.js``` e ```.json```.
+```json
+{
+  "scripts": {
+    "lint": "eslint --ignore-path .gitignore",
+    "build": "babel src --out-dir dist",
+    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|json)\""
+  },
+}
+``` 
+
+O comando acima formata todos os arquivos ```.js``` e ```.json```, também passamos a flag de para ignorarmos todas as pastas e arquivos que estão dentro do arquivo ```.gitignore```.
