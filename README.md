@@ -205,3 +205,20 @@ Também podemos utilizar o prettier para que formate o código ao salvar, adicio
   "editor.formatOnSave": true
 }
 ```
+
+## 08 - Desabilitando estilos desnecessarios do eslint com eslint config prettier
+Ao usar o eslint e o prettier, podemos em algum momento ter conflitos nas regras, um exemplo disso seria apontar no prettier que não queremos ";" no final de nossas linhas e dentro do eslint apontarmos que ao final de toda linha queremos o ";", sendo assim seria necessário desabilitar dentro do eslint essa regra, porém podemos usar o pacote ```eslint-config-prettier```, para que esses modulos possam se conversar entre si.
+
+01 - Inicialmente devemos instalar o ```eslint-config-prettier```:
+```bash
+npm install --save-dev eslint-config-prettier
+```
+
+02 - Em seguida dentro da propriedade ```extends```, devemos adicionar essa extensão ```eslint-config-prettier```.
+```json
+{
+  "extends": ["eslint:recommended", "eslint-config-prettier"],
+}
+```
+
+Após isso teremos o resultado onde esses dois pacotes irão se conversar e evitar conflitos.
