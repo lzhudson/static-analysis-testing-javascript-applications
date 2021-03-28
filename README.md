@@ -187,3 +187,21 @@ Essas configurações serão usadas quando rodarmos algum comando que tenha o pr
 ```bash
 npm run format
 ```
+
+## 07 - Usando a extensão do prettier no VSCODE
+Assim como a extensão do eslint podemos usar também a do prettier.
+
+Você pode baixa-la no seguinte link: [Prettier VSCODE](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+
+Ao instalarmos, teremos que definir como padrão um formatador de código, abrimos o arquivo ```config.json```, do vscode e adicionamos a seguinte propriedade abaixo no arquivo
+```json
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
+```
+Também podemos utilizar o prettier para que formate o código ao salvar, adicionando a seguinte linha:
+```json
+{
+  "editor.formatOnSave": true
+}
+```
