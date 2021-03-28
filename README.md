@@ -153,3 +153,37 @@ npx prettier src/example.js --write
 ``` 
 
 O comando acima formata todos os arquivos ```.js``` e ```.json```, também passamos a flag de para ignorarmos todas as pastas e arquivos que estão dentro do arquivo ```.gitignore```.
+
+
+## 06 - Configurando Prettier
+Assim como o EsLint, também podemos configurar o prettier criando um arquivo de configuração chamado ```.prettierrc```.
+
+Para facilitar a criação do arquivo podemos utilizar o playground da propria ferramenta para aplicar as opções: [Playground Prettier](https://prettier.io/playground/)
+
+Ao fim podemos copiar as configurações e colar dentro de um arquivo chamado ```.prettierrc```.
+```json
+{
+  "arrowParens": "avoid",
+  "bracketSpacing": false,
+  "embeddedLanguageFormatting": "auto",
+  "htmlWhitespaceSensitivity": "css",
+  "insertPragma": false,
+  "jsxBracketSameLine": false,
+  "jsxSingleQuote": false,
+  "printWidth": 80,
+  "proseWrap": "always",
+  "quoteProps": "as-needed",
+  "requirePragma": false,
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "all",
+  "useTabs": true,
+  "vueIndentScriptAndStyle": false
+}
+```
+
+Essas configurações serão usadas quando rodarmos algum comando que tenha o prettier no contexto, como o comando abaixo:
+```bash
+npm run format
+```
